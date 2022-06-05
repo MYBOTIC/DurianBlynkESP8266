@@ -1,0 +1,46 @@
+#Syntax DurianBlynkESP8266
+
+//General
+int begin(String TempID, String DeviceName, String auth, String ssid, String pass);
+short resetEsp(void);
+short setEspBaudRate(short sBaudRate);
+String getEspFirmwareVersion(void);
+String getMacAddress(void);
+void run(void);
+
+//Check blynk connection
+short connected();
+
+//Blynk virtual Write
+void virtualWrite(short sVpin, data1, data2, data3, data4);  
+*data can be String, double and integer
+
+//Bynk set property 
+void setProperty(short sVpin, data1, data2, data3, data4);
+*data can be String, double and integer
+
+//Blynk notification, email and event
+void notify(String szMsg);
+void email(String szEmail_Add, String szEmail_Subject, String szEmail_Msg);
+void logEvent(String szEvent_Name, String szEvent_Description);
+
+//Read value from Blynk Widget
+int read_asInt(short sVirtualPin, short sDataArray = 0);
+float read_asFloat(short sVirtualPin, short sDataArray = 0);
+double read_asDouble(short sVirtualPin, short sDataArray = 0);
+String read_asStr(short sVirtualPin, short sDataArray = 0);
+
+//Write data to Blynk Widget terminal 
+void terminal_print(short sVirtualPin, String szData);
+void terminal_println(short sVirtualPin, String szData);
+
+//Clear data 
+void virtualClear(short sVirtualPin);
+
+//Read real time 
+int hour(void);
+int minute(void);
+int second(void);
+int day(void);
+int month(void);
+int year(void);
