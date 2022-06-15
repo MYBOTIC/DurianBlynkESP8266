@@ -63,6 +63,8 @@ int DBlynk::begin(String TempID, String DeviceName, String auth, String ssid, St
     gulStartCheckConnectionTimer = millis(); //Start Timer for checking connection  
   }
   
+  delay(100);
+  
   return usStatus;
 }
 
