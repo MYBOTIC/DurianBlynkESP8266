@@ -58,6 +58,9 @@ void setup()
 
   //Connect to Blynk
   DBlynk.begin(tempID, deviceName, auth, ssid, pass);
+ 
+  //Set pin 11 to input pull up
+  pinMode(BUTTON, INPUT_PULLUP);
 }
 
 void loop() 
