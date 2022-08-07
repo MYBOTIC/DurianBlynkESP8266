@@ -1,5 +1,8 @@
 #Syntax DurianBlynkESP8266
 
+- The functions can be called. All the function need to add DBlynk. in front in order to compile successful.
+Example: DBlynk.virtualWrite(V0, 255);
+
 //General
 int begin(String TempID, String DeviceName, String auth, String ssid, String pass);
 short resetEsp(void);
