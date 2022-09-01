@@ -62,7 +62,7 @@ int DBlynk::begin(String TempID, String DeviceName, String auth, String ssid, St
     m_BlynkConnected = 1;
     gulStartCheckConnectionTimer = millis(); //Start Timer for checking connection  
   }
-  
+
   delay(100);
   
   return usStatus;
@@ -125,7 +125,8 @@ short DBlynk::resetEsp(void)
 
   #ifdef DBLYNK_PRINT_H
     m_DebugUart = &DBLYNK_PRINT_H;
-    m_DebugUart->print(F("Reset ESP8266..."));   
+    m_DebugUart->print(F("Reset ESP8266...")); 
+    delay(50);  
   #endif
 
   m_puart->println(F("!RESET"));
@@ -200,7 +201,8 @@ short DBlynk::sSet_Blynk_TempID(String TempID)
   
   //Blynk Template ID
   #ifdef DBLYNK_PRINT_H
-    m_DebugUart->print(F("Blynk Template ID..."));   
+    m_DebugUart->print(F("Blynk Template ID..."));  
+    delay(50); 
   #endif
 
   if(TempID.length() > 0)
@@ -258,6 +260,7 @@ short DBlynk::sSet_Blynk_DeviceName(String DeviceName)
   //Blynk Device Name
   #ifdef DBLYNK_PRINT_H
     m_DebugUart->print(F("Blynk Device Name..."));   
+    delay(50);
   #endif
 
   if(DeviceName.length() > 0)
@@ -313,6 +316,7 @@ short DBlynk::sSet_Blynk_SSID(String ssid)
   //Blynk Device Name
   #ifdef DBLYNK_PRINT_H
     m_DebugUart->print(F("SSID..."));   
+    delay(50);
   #endif
 
   if(ssid.length() > 0)
@@ -369,6 +373,7 @@ short DBlynk::sSet_Blynk_Pass(String pass)
   //Blynk Device Name
   #ifdef DBLYNK_PRINT_H
     m_DebugUart->print(F("Password..."));   
+    delay(50);
   #endif
 
   if(pass.length() > 0)
@@ -424,6 +429,7 @@ short DBlynk::sSet_Blynk_AuthToken(String auth)
   //Blynk Device Name
   #ifdef DBLYNK_PRINT_H
     m_DebugUart->print(F("Blynk Auth Token..."));   
+    delay(50);
   #endif
 
   if(auth.length() > 0)
