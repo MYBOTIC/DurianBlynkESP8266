@@ -19,6 +19,10 @@
 
 #include "DurianBlynkESP8266.h"
 
+//uncomment this if using Serial for ESP
+//#define EspSerial Serial
+
+//comment this if using Serial for ESP
 // or Software Serial on Uno, Nano...
 #include <SoftwareSerial.h>
 SoftwareSerial EspSerial(2, 3); // RX, TX
